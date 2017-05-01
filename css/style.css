@@ -1,0 +1,181 @@
+/* colors -> https://coolors.co/e54b4b-ebebd3-464655-e4b363-e8e9eb */
+
+body {
+  background: #f6f4e2;
+  font-family: 'Titillium Web', sans-serif;
+  letter-spacing: 2px;
+}
+
+.container {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  background: #0e8db5;
+  color: #e4cb9a;
+  padding: 1.5em 0;
+  position: relative;
+}
+
+header::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.logo {
+  float: left;
+  font-size: 1rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.logo span {
+  font-weight: 400;
+}
+
+.site-nav {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #e7a119;
+  -webkit-clip-path: circle(0px at top left);
+          clip-path: circle(0px at top left);
+  -webkit-transition: -webkit-clip-path ease-in-out 500ms;
+  transition: -webkit-clip-path ease-in-out 500ms;
+  transition: clip-path ease-in-out 500ms;
+  transition: clip-path ease-in-out 500ms, -webkit-clip-path ease-in-out 500ms;
+  text-align: left;
+}
+
+.site-nav--open {
+  -webkit-clip-path: circle(150% at top right);
+          clip-path: circle(150% at top right);
+}
+
+.site-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav li {
+  border-bottom: 1px solid #f6f4e2;
+}
+
+.site-nav li:last-child {
+  border-bottom: none;
+}
+
+.site-nav a {
+  color: #EBEBD3;
+  display: block;
+  padding: 1.5em 4em 1.5em 3em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background: #E4B363;
+  color: #464031;
+}
+
+.site-nav--icon {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-right: 1em;
+  width: 1.1em;
+  text-align: right;
+  color: rgba(255,255,255,.4);
+}
+
+.menu-toggle {
+  padding: 1em;
+  position: absolute;
+  top: 1em;
+  right: .5em;
+  cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  display: block;
+  background: #EBEBD3;
+  height: 2px;
+  width: 1.75em;
+  -webkit-transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms;
+}
+
+.hamburger::before {
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+}
+
+.hamburger::after {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+.open .hamburger {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.open .hamburger::before {
+  display: none;
+}
+
+.open .hamburger::after {
+  -webkit-transform: translateY(-1px) rotate(-90deg);
+          transform: translateY(-1px) rotate(-90deg);
+}
+
+@media (min-width: 768px) {
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    width: 80%;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    position: relative;
+    background: transparent;
+    float: right;
+    -webkit-clip-path: initial;
+            clip-path: initial;
+
+  }
+
+  .site-nav li {
+    display: inline-block;
+    border: none;
+  }
+
+  .site-nav a {
+    padding: 0;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: transparent;
+  }
+
+  .site-nav--icon {
+    display: none;
+  }
+
+}
