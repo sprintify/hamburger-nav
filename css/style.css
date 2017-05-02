@@ -148,7 +148,6 @@ nav a:focus {
 }
 
 .site-nav--icon {
-  display: inline-block;
   font-size: 1.4em;
   margin-right: 1em;
   width: 1.1em;
